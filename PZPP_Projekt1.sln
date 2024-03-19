@@ -5,8 +5,6 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PZPP_Projekt1", "PZPP_Projekt1.csproj", "{8C2BE4AA-E6A9-4A6A-A749-605C5035CB36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadingDOCX", "..\LoadingDOCX\LoadingDOCX.csproj", "{46FB47A0-3D93-43A2-8410-71A052BD73CA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{8C2BE4AA-E6A9-4A6A-A749-605C5035CB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C2BE4AA-E6A9-4A6A-A749-605C5035CB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C2BE4AA-E6A9-4A6A-A749-605C5035CB36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46FB47A0-3D93-43A2-8410-71A052BD73CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46FB47A0-3D93-43A2-8410-71A052BD73CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46FB47A0-3D93-43A2-8410-71A052BD73CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46FB47A0-3D93-43A2-8410-71A052BD73CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
