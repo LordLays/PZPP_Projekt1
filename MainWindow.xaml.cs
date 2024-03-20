@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -12,7 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System;
 using System.Linq;
-using DocumentFormat.OpenXml.Wordprocessing;
+
 
 namespace PZPP_Projekt1
 {
@@ -21,10 +22,12 @@ namespace PZPP_Projekt1
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
         }
+      
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
@@ -35,5 +38,20 @@ namespace PZPP_Projekt1
                 MainTextBox.Text = FileService.ReadFile(filePath);
             }
         }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog();
+            saveFileDialog.Filter= "Word Document (*.docx)|*.docx|PDF files (*.pdf)|*.pdf";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string filePath = saveFileDialog.FileName;
+                bool saveAsPdf = System.IO.Path.GetExtension(filePath).Equals(".pdf", StringComparison.OrdinalIgnoreCase);
+                FileService.SaveFile(filePath, MainTextBox.Text, saveAsPdf);
+
+            }
+        }
+
+       
     }
 }
