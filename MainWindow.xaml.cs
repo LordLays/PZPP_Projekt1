@@ -22,6 +22,7 @@ namespace PZPP_Projekt1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string currentFileName;
 
         public MainWindow()
         {
@@ -35,7 +36,9 @@ namespace PZPP_Projekt1
             if (openFileDialog.ShowDialog() == true)
             {
                 string filePath = openFileDialog.FileName;
+                currentFileName = System.IO.Path.GetFileName(filePath);
                 MainTextBox.Text = FileService.ReadFile(filePath);
+                this.Title = currentFileName;
             }
         }
 
@@ -46,8 +49,10 @@ namespace PZPP_Projekt1
             if (saveFileDialog.ShowDialog() == true)
             {
                 string filePath = saveFileDialog.FileName;
+                currentFileName = System.IO.Path.GetFileName(filePath);
                 bool saveAsPdf = System.IO.Path.GetExtension(filePath).Equals(".pdf", StringComparison.OrdinalIgnoreCase);
                 FileService.SaveFile(filePath, MainTextBox.Text, saveAsPdf);
+                this.Title = currentFileName;
 
             }
         }
